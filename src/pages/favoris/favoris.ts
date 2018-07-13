@@ -33,11 +33,15 @@ export class FavorisPage {
 
   monthNames: string[];
 
+  dayNames: string[];
+
   currentMonth: any;
 
   currentYear: any;
 
   currentDate: any;
+
+  dayOfWeek: any;
 
   eventList: any;
 
@@ -59,7 +63,11 @@ export class FavorisPage {
 
     this.date = new Date();
 
-    this.monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    this.monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    this.dayNames = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+
+    this.dayOfWeek = this.dayNames[this.date.getDay()];
 
     this.getDaysOfMonth();
 

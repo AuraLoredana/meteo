@@ -1,0 +1,43 @@
+
+<ion-menu [content]="content">
+    <ion-header >
+        <ion-toolbar color="headercolor">
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <p text-center>{{authProvider.userDetails ? 'Welcome ' + authProvider.userDetails.email : ''}}</p>
+        <ion-list>
+            <button *ngIf="!(authProvider.user | async)" menuClose ion-item icon-start (click)="goToLoginPage()">
+                <ion-icon name="person" item-start></ion-icon>
+                Login
+            </button>
+            <button *ngIf="authProvider.user | async" menuClose ion-item icon-start (click)="goToLoginPage()">
+                <ion-icon name="sunny" item-start></ion-icon>
+               Services
+            </button>
+            <button *ngIf="authProvider.user | async" menuClose ion-item icon-start (click)="onLogout()">
+                <ion-icon name="person" item-start></ion-icon>
+                Logout
+            </button>
+                    <button *ngIf="authProvider.user | async" menuClose ion-item icon-start (click)="openDetails()">
+                <ion-icon name="cloud-circle" item-start></ion-icon>
+               Mon bulletin meteo
+            </button>
+            <button *ngIf="authProvider.user | async" menuClose ion-item icon-start (click)="openMyService()">
+                <ion-icon name="key" item-start></ion-icon>
+               Mon Service
+            </button>
+                     <button *ngIf="authProvider.user | async" menuClose ion-item icon-start (click)="openProfile()">
+                <ion-icon name="ionitron" item-start></ion-icon>
+               Profile
+            </button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<!--<ion-nav [root]="rootPage" #content swipeBackEnabled="false"  #content></ion-nav>-->
+<ion-nav [root]="rootPage" #content  swipeBackEnabled="false"></ion-nav>

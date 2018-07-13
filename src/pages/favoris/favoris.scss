@@ -1,0 +1,188 @@
+page-favoris {
+
+  [col-1] {
+    -webkit-box-flex: 0;
+
+    -webkit-flex: 0 0 8.33333%;
+
+    -ms-flex: 0 0 8.33333%;
+
+    flex: 0 0 14.285714285714286%;
+
+    width: 14.285714285714286%;
+
+    max-width: 14.285714285714286%;
+  }
+
+  .col {
+
+    text-align: center;
+
+    padding: 5px;
+
+  }
+
+  .last-month, .next-month {
+
+    color: #999999;
+
+    font-size: 12px;
+
+  }
+
+  .currentDate, .otherDate {
+
+    padding-top: 3px;
+
+    padding-bottom: 3px;
+
+    padding-left: 3px;
+
+    padding-right: 3px;
+
+  }
+
+  .otherDate {
+
+      font-weight: bold;
+
+      background-color: green;
+
+      color: white;
+
+      border-radius: 30px;
+
+  }
+
+  .currentDate {
+
+    font-weight: bold;
+
+    background-color: red;
+
+    color: white;
+
+    border-radius: 30px;
+
+  }
+
+  .calendar-header {
+
+    background-color: #F5F5F5;
+
+    color: #000000;
+
+  }
+
+  .event-bullet {
+
+    margin: 2px auto;
+
+    height: 5px;
+
+    width: 5px;
+
+    background-color: green;
+
+    border-radius: 30px;
+
+  }
+
+  .selected-date {
+
+    width: 20px;
+
+    height: 2px;
+
+    background-color: blue;
+
+  }
+
+  .unselected-date {
+
+    border: none;
+
+  }
+
+  .calendar-body {
+
+    .grid {
+
+      padding: 0;
+
+    }
+
+    .col:last-child {
+
+      border-right: none;
+
+    }
+
+    .calendar-weekday, .calendar-date {
+
+      text-align: center;
+
+      margin: 0;
+
+    }
+
+    .calendar-weekday {
+
+      font-weight: bold;
+
+      border-bottom: solid 1px #FFFFFF;
+
+      background-color: #FFFFFF;
+
+    }
+
+    .calendar-date {
+
+      border-top: solid 1px #ffffff;
+
+      border-bottom: solid 1px #ffffff;
+
+    }
+ion-row.calendar-date.row{
+  
+  
+}
+  }
+
+ion-row.row{
+  
+ 
+  margin: 0 auto;
+
+}
+div.parag{
+  display: inline-block;
+  color: red;
+  font-size: 20px;
+  padding: 20px;
+}
+
+div.paragt{
+  display: inline-block;
+  color: yellow;
+  font-size: 20px;
+  padding: 20px;
+}
+
+div.paragth{
+  display: inline-block;
+  color: green;
+  font-size: 20px;
+  padding: 20px;
+}
+
+div.coldoi{
+  
+  display: inline-block;
+}
+
+label.itemselect{
+ display: block;
+}
+
+}

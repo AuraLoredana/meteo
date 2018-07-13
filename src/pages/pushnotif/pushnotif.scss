@@ -1,0 +1,29 @@
+page-pushnotif {
+ .profile-image{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+}
+
+ ion-row {
+       align-items: center;
+       text-align: center;
+     }
+ span.button-inner{
+     font-size: 18px;
+     }
+button.sendabon.button.button-md.button-default.button-default-md.button-round.button-round-md.button-md-secondary{
+
+margin: 0 auto;
+width:55%;
+height:100%;
+    }
+
+button.sendabon.button.button-md.button-default.button-default-md.button-round.button-round-md.button-md-danger{
+
+margin: 0 auto;
+width:55%;
+height:100%;
+}
+
+}

@@ -1,0 +1,290 @@
+<!--
+  Generated template for the MyservicePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-navbar color="headercolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mon Service</ion-title>
+  </ion-navbar>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="chart.js"></script>
+
+</ion-header>
+
+<ion-content style="background-color: #FAFAFA" padding class="row container-fluid">
+
+  <div class="row container-fluid" style="font-size:50px;">
+    <ion-item>
+      <ion-icon item-left style="color:red" name="rainy"></ion-icon>
+      <p><b>TDI : </b>Mardi 22 mai 2018</p>
+      <ion-icon item-right ios="ios-mail" md="md-mail"></ion-icon>
+      <ion-icon item-right ios="ios-heart" md="md-heart"></ion-icon>
+    </ion-item>
+  </div>
+
+  <div class="row container-fluid" style="margin: 0 auto;" justify-content-center align-items-center>
+
+    <!-- Performances block-->
+    <div style="background-color: #ffffff" justify-content-center align-items-center>
+      <ion-col col-md-6 ion-fixed>
+        <div class="row container-fluid" justify-content-center align-items-center>
+          <p style="text-align: center">PERFORMANCES</p>
+        </div>
+        <div class="row container-fluid">
+          <ion-col col-md-4 ion-fixed style="margin-top:10px;width: 200px; height: 200px;">
+            <div justify-content-center align-items-center style="height: 100%;background:#E6E6E6;">
+              <br>
+              <p style="text-align: center">NOTIFICATIONS/ MOIS</p>
+              <div style="display: block;">
+                <ion-img class="myServiceImage" justify-content-center align-items-center style="height: 100%;display: block; margin-bottom: auto; margin-top: auto; margin-left: auto; margin-right: auto; width: auto; height: 100px;"
+                         src="assets/graph.png"></ion-img>
+              </div>
+            </div>
+          </ion-col>
+          <ion-col col-md-4 ion-fixed style="margin-top:10px;width: 200px; height: 200px;">
+            <div justify-content-center style="height: 100%;background:#E6E6E6;">
+              <br>
+              <p style="text-align: center">A CE JOUR</p>
+              <br>
+              <p style="text-align: center; color: red; font-size:50px;">175</p>
+              <p style="text-align: center">abonnés</p>
+            </div>
+          </ion-col>
+          <ion-col col-md-4 ion-fixed style="margin-top:10px;width: 200px; height: 200px;">
+            <div justify-content-center align-items-center style="height: 100%;background:#E6E6E6;">
+              <br>
+              <p style="text-align: center">TEMPS DE CONNECTION</p>
+              <ion-img class="myServiceImage" justify-content-center align-items-center style="display: block; margin-bottom: auto; margin-top: 40px; margin-left: auto; margin-right: auto; width: 80px; height: 80px;"
+                       src="assets/pressure1.png"></ion-img>
+            </div>
+          </ion-col>
+        </div>
+      </ion-col>
+    </div>
+
+    <!-- Donnez votre avis-->
+    <div style="background-color: #ffffff" justify-content-center align-items-center>
+      <ion-col col-md-6 ion-fixed>
+        <div class="row container-fluid" justify-content-center align-items-center>
+          <p>DONNEZ VOTRE AVIS</p>
+        </div>
+        <div class="row container-fluid">
+          <ion-col col-md-4 ion-fixed style="margin-top:10px;width: 200px; height: 200px;">
+            <div justify-content-center align-items-center style="height: 100%;background:#E6E6E6;">
+              <br>
+              <p style="text-align: center">Ergonomie</p><br>
+              <ion-img class="myServiceImage" justify-content-center align-items-center style="height: 100%;display: block; margin-bottom: auto; margin-top: auto; margin-left: auto; margin-right: auto; width: auto; height: auto;"
+                       src="assets/rating.png"></ion-img>
+              <br>
+              <p style="text-align: center">Moy.<b> 3/5 </b>(102 votants)</p>
+            </div>
+          </ion-col>
+          <ion-col col-md-4 ion-fixed style="margin-top:10px;width: 200px; height: 200px;">
+            <div justify-content-center align-items-center style="height: 100%;background:#E6E6E6;">
+              <br>
+              <p style="text-align: center">Rapidité d'acce&egrave;s</p>
+              <br>
+              <ion-img class="myServiceImage" justify-content-center align-items-center style="height: 100%;display: block; margin-bottom: auto; margin-top: auto; margin-left: auto; margin-right: auto; width: auto; height: auto;"
+                       src="assets/rating.png"></ion-img>
+              <br>
+              <p style="text-align: center">laissez votre avis!</p>
+            </div>
+          </ion-col>
+          <ion-col col-md-4 ion-fixed style="margin-top:10px;width: 200px; height: 200px;">
+            <div justify-content-center align-items-center style="height: 100%;background:#E6E6E6;">
+              <br>
+              <p style="text-align: center">Formation satisfaisante?</p><br>
+              <ion-img class="myServiceImage" justify-content-center align-items-center style="height: 100%;display: block; margin-bottom: auto; margin-top: auto; margin-left: auto; margin-right: auto; width: auto; height: auto;"
+                       src="assets/rating.png"></ion-img>
+              <br>
+              <p style="text-align: center">Moy.<b> 3/5 </b>(100 votants)</p>
+            </div>
+          </ion-col>
+        </div>
+      </ion-col>
+    </div>
+  </div>
+
+  <ion-row class="row container-fluid" style="margin: 0 auto;" justify-content-center align-items-center>
+
+    <!-- Calendar -->
+    <ion-col col-md-3 ion-fixed style="background-color: #ffffff;width: 230px; height: 520px;">
+      <br>
+      <p style="text-align: center">Mes prévisions TDI</p><br>
+      <div class="calendar-header">
+        <ion-row class="calendar-month">
+          <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
+          <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
+          <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
+        </ion-row>
+      </div>
+      <div class="calendar-body">
+        <ion-grid>
+          <ion-row class="calendar-weekday">
+            <ion-col>D</ion-col>
+            <ion-col>L</ion-col>
+            <ion-col>M</ion-col>
+            <ion-col>M</ion-col>
+            <ion-col>J</ion-col>
+            <ion-col>V</ion-col>
+            <ion-col>S</ion-col>
+          </ion-row>
+          <ion-row class="calendar-date">
+            <ion-col col-1 style="background:#F5F5F5" *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</ion-col>
+
+            <ion-col col-1 *ngFor="let day of daysInThisMonth" (click)="selectDate(day)">
+              <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+              <ng-template #otherDate class="otherDate">
+                <span class="otherDate">{{day}}</span>
+                <div class="event-bullet" *ngIf="checkEvent(day)"></div>
+              </ng-template>
+            </ion-col>
+
+            <ion-col col-1 style="background:#F5F5F5" *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div class="selected-event" *ngIf="isSelected">
+        <ion-list>
+          <ion-item *ngFor="let se of selectedEvent">
+            <ion-buttons end>
+              <button ion-button clear icon-only (click)="deleteEvent(se)">
+                <ion-icon name="close"></ion-icon>
+              </button>
+            </ion-buttons>
+            <h2>{{se.title}}</h2>
+            <h3>{{se.message}}</h3>
+            <p>
+              Start Date: {{se.startDate}}<br>
+              Start Date: {{se.endDate}}
+            </p>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div row style="background:#F5F5F5">
+        <ion-col col-1 style="color:#FF0000"> A l'arrêt</ion-col>
+        <ion-col col-1 style="color:#FFFF00"> En cours de maintenance</ion-col>
+        <ion-col col-1 style="color:#00FF00"> En service</ion-col>
+      </div>
+    </ion-col>
+    <!-- Fiche functionelle (CARTAGE) -->
+    <ion-col col-md-3 ion-fixed style="background-color: #ffffff;margin-left:20px; margin-right:20px; margin-top: 30px">
+      <br>
+      <b style="text-align: center">
+        Fiche functionelle (CARTAGE)
+      </b>
+      <br><br>
+
+      <p style="float:left;color: #666666; line-height: 18px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer nec odio.
+        Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+        Nulla quis sem at nibh elementum imperdiet.
+        Duis sagittis ipsum. Praesent mauris.
+        Fusce nec tellus sed augue semper porta.
+        Mauris massa. Vestibulum lacinia arcu eget nulla.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        Curabitur sodales ligula in libero.
+        Sed dignissim lacinia nunc.
+        Curabitur tortor. Pellentesque nibh.
+        Aenean quam. In scelerisque sem at dolor.
+        Maecenas mattis.
+        Sed convallis tristique sem.
+        Proin ut ligula vel nunc egestas porttitor.
+        Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa.
+        Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum.
+        Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
+        Quisque volutpat condimentum velit.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+        per inceptos himenaeos. Nam nec ante.
+        Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam,
+        a cursus ipsum ante quis turpis.
+        Nulla facilisi. Ut fringilla.
+        Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet.
+        Vestibulum sapien. Proin quam. Etiam ultrices.
+        Vestibulum sapien. Proin quam. Etiam ultrices.
+        Suspendisse in justo eu magna luctus suscipit.
+      
+
+      </p>
+    </ion-col>
+    <ion-col col-md-3 class="row container-fluid" style="background-color: #ffffff;margin-left:20px; margin-right:20px; width: 230px; height: 520px;">
+      <br>
+      <div class="myPDFS">
+        <ion-row style="margin-left:20px;">
+          <br>
+          <b style="text-align: center">
+            TUTORIELS
+          </b>
+          <br>
+          <br>
+          <br>
+        </ion-row>
+        <ion-row style="margin-left:20px;">
+          <a href="https://www.tutorialspoint.com/spring/spring_tutorial.pdf">
+            <ion-img style="width: 5px; height: 5px;" src="assets/pdf.png"></ion-img>Créer un fichier xml
+          </a>
+          <br>
+        </ion-row>
+        <ion-row style="margin-left:20px;">
+          <a href="https://www.tutorialspoint.com/spring/spring_tutorial.pdf">
+            <ion-img style="width: 5px; height: 5px;" src="assets/pdf.png"></ion-img>Ajouter une image
+          </a>
+          <br>
+        </ion-row>
+        <ion-row style="margin-left:20px;">
+          <a href="https://www.tutorialspoint.com/spring/spring_tutorial.pdf">
+            <ion-img style="width: 5px; height: 5px;" src="assets/pdf.png"></ion-img>Supprimer une classe
+          </a>
+          <br>
+        </ion-row>
+        <ion-row style="margin-left:20px;">
+          <a href="https://www.tutorialspoint.com/spring/spring_tutorial.pdf">
+            <ion-img style="width: 5px; height: 5px;" src="assets/pdf.png"></ion-img>Activer le HTConfig
+          </a>
+          <br>
+          <br>
+        </ion-row>
+        <br>
+        <ion-row style="margin-left:20px;">
+          <b style="text-align: center">
+            FAQ
+          </b>
+          <br>
+        </ion-row>
+        <ion-row style="margin-left:20px;">
+          <a href="https://www.tutorialspoint.com/spring/spring_tutorial.pdf">
+            <ion-img style="width: 5px; height: 5px;" src="assets/pdf.png"></ion-img>Foire aux questions
+          </a>
+          <br>
+          <br>
+          <br>
+        </ion-row>
+        <br>
+        <br>
+        <div class="row container-fluid" style=" margin: 0 auto;margin-left:30%;  display: inline-block;" justify-content-center align-items-center>
+          <ion-row>
+            <button ion-button full round color="#0B3861" style="width:200px;">Ticket LUCI</button>
+          </ion-row>
+        
+          <ion-row >
+            <button ion-button full round color="#0B3861" style="width:200px;">FORUM</button>
+           
+          </ion-row>
+         
+          <ion-row >
+            <button ion-button full round style="width:200px;" color="#2E64FE">VOS interlocuteurs TDI</button>
+          </ion-row>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

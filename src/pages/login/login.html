@@ -1,0 +1,52 @@
+<ion-header >
+  <ion-navbar color="headercolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWp0omNYK2R6FLc1EFZIowuL_ukQEZs1-dN2u43u9GE1CqX6ICFw"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+   
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+           <ion-item>
+    <ion-label floating>Email Address</ion-label>
+    <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+            
+         <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+             
+               <button class="sendabon" color="light" ion-button round (click)="login(user)">Login</button>
+             </ion-col>
+              <ion-col class="signup-col">
+                 <button class="sendabon" color="light" ion-button round (click)="register(user)">Register</button>
+        
+        </ion-col>
+      </ion-row>
+      
+   
+  </div>
+
+</ion-content>

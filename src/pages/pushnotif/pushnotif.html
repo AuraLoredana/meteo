@@ -1,0 +1,65 @@
+<!--
+  Generated template for the PushnotifPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="headercolor">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>User Profile</ion-title>
+     <ion-buttons end>
+      <button ion-button icon-only (click)="goToAddNotifPage()">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form #formCtrl="ngForm">
+      <div align="center" *ngIf="formCtrl.form.valid">
+          
+        <h1> Profile</h1>
+        <img class="profile-image" src="assets/profiledoi.jpg">
+          <h4>{{person.name}}, {{person.company}}</h4>
+          <h5>{{age}} years old</h5>
+      </div>
+  <ion-list>
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="person.name" name="name" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Company</ion-label>
+        <ion-select [(ngModel)]="person.company" name="company" required>
+          <ion-option value="CGI">CGI</ion-option>
+          <ion-option value="CIMB">CIMB</ion-option>
+          <ion-option value="Public Bank">Public Bank</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-label >Birth Date</ion-label>
+          <ion-datetime required name="birthdate" displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="dob" [ngModelOptions]="{standalone:true}"></ion-datetime>
+      </ion-item>
+      
+  </ion-list>
+
+        <ion-row>
+        <ion-col class="signup-col">
+             <button class="sendabon" color="secondary" ion-button round (click)="save()">Save</button>
+             
+             </ion-col>
+              <ion-col class="savecol">
+              	<button class="sendabon" color="danger" ion-button round (click)="reset()">Reset</button>
+                  
+        </ion-col>
+      </ion-row>
+  
+</form>
+</ion-content>

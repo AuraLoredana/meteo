@@ -1,8 +1,8 @@
 {
   "name": "firebaseCRUD-starter",
   "version": "0.0.1",
-  "author": "Baljeet Singh",
-  "homepage": "http://baljeetsingh.in/",
+  "author": "Aura",
+  "homepage": "",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",

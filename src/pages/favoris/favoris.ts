@@ -27,6 +27,12 @@ export class FavorisPage {
 
   daysInThisMonth: any;
 
+  daysInThisMonthGreen: any;
+
+  daysInThisMonthRed: any;
+
+  daysInThisMonthYellow: any;
+
   daysInLastMonth: any;
 
   daysInNextMonth: any;
@@ -40,6 +46,10 @@ export class FavorisPage {
   currentYear: any;
 
   currentDate: any;
+
+  currentDateHeader: any;
+
+  finalcurrentMonthHeader: any;
 
   dayOfWeek: any;
 
@@ -55,7 +65,9 @@ export class FavorisPage {
 
     public navCtrl: NavController,
 
-    private calendar: Calendar) {}
+    private calendar: Calendar) {
+    this.currentDateHeader = new Date().getDate();
+  }
 
 
 
@@ -93,10 +105,6 @@ export class FavorisPage {
 
       this.currentDate = new Date().getDate();
 
-    } else {
-
-      this.currentDate = 999;
-
     }
 
 
@@ -120,7 +128,14 @@ export class FavorisPage {
       this.daysInThisMonth.push(j+1);
 
     }
+    console.log("daysInThisMonth: " + this.daysInThisMonth);
+    this.daysInThisMonthGreen = this.daysInThisMonth.slice(0, 10);
 
+    this.daysInThisMonthRed = this.daysInThisMonth.slice(10, 20);
+    console.log("daysInThisMonthRed: " + this.daysInThisMonthRed);
+
+    this.daysInThisMonthYellow = this.daysInThisMonth.slice(20, this.daysInThisMonth.length);
+    console.log("daysInThisMonthYellow: " + this.daysInThisMonthYellow);
 
 
     var lastDayThisMonth = new Date(this.date.getFullYear(), this.date.getMonth()+1, 0).getDay();

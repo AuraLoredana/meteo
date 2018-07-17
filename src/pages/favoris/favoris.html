@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color ="headercolor">
-    <ion-title>Mon bulletin météo: {{dayOfWeek}} {{currentDate}} {{currentMonth}} {{currentYear}}</ion-title>
+    <ion-title>Mon bulletin météo: {{dayOfWeek}} {{currentDateHeader}} {{currentMonth}} {{currentYear}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -70,20 +70,40 @@
 
 
 
-            <ion-col col-1 *ngFor="let day of daysInThisMonth" (click)="selectDate(day)">
+            <ion-col col-1 *ngFor="let day of daysInThisMonthGreen" (click)="selectDate(day)">
 
-                <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+              <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
 
               <ng-template #otherDate class="otherDate">
 
-                <span class="otherDate">{{day}}</span>
-
-                <div class="event-bullet" *ngIf="checkEvent(day)"></div>
+                <span class="otherDate">{{day}}</span>                
 
               </ng-template>
 
             </ion-col>
 
+            <ion-col col-1 *ngFor="let day of daysInThisMonthRed" (click)="selectDate(day)">
+
+              <span class="currentDate" *ngIf="currentDate === day; else otherDate2">{{day}}</span>
+
+              <ng-template #otherDate2 class="otherDate2">
+
+                <span class="otherDate2">{{day}}</span>                
+
+              </ng-template>
+
+            </ion-col>
+            <ion-col col-1 *ngFor="let day of daysInThisMonthYellow" (click)="selectDate(day)">
+
+              <span class="currentDate" *ngIf="currentDate === day; else otherDate3">{{day}}</span>
+
+              <ng-template #otherDate3 class="otherDate3">
+
+                <span class="otherDate3">{{day}}</span>
+               
+              </ng-template>
+
+            </ion-col>
 
 
             <ion-col col-1 style="background:#F5F5F5" *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</ion-col>

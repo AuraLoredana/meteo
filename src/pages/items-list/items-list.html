@@ -28,7 +28,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style="background-image:url('assets/1.jpg')">
   <ion-list>
       <ion-item (click)="selectItem(item)" *ngFor="let item of itemsRef$ | async">
         <h2>{{item.itemName}}</h2>

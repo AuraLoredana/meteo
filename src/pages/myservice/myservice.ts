@@ -24,6 +24,12 @@ export class MyservicePage {
   daysInThisMonth: any;
   daysInLastMonth: any;
   daysInNextMonth: any;
+
+  daysInThisMonthGreen: any;
+
+  daysInThisMonthRed: any;
+
+  daysInThisMonthYellow: any;
   monthNames: string[];
   currentMonth: any;
   currentYear: any;
@@ -77,7 +83,12 @@ export class MyservicePage {
         this.daysInNextMonth.push(l);
       }
     }
-    console.log("lastDayThisMonth: " + lastDayThisMonth);
+
+    this.daysInThisMonthGreen = this.daysInThisMonth.slice(0, 10);
+
+    this.daysInThisMonthRed = this.daysInThisMonth.slice(10, 20);
+
+    this.daysInThisMonthYellow = this.daysInThisMonth.slice(20, this.daysInThisMonth.length);
 
     if (this.daysInNextMonth.length > 6) {
       this.daysInNextMonth.length = 7 - lastDayThisMonth - 1;

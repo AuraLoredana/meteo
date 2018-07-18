@@ -1,200 +1,197 @@
 <ion-header>
 
-   <ion-navbar color ="headercolor">
-   
-   <ion-title>Mon espace de diffusion</ion-title>    
+  <ion-navbar color="headercolor">
+
+    <ion-title>Mon espace de diffusion</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="background-image:url('assets/1.jpg')">
 
-	<ion-grid text-center>
+  <ion-grid text-center>
     <ion-row>
-      <ion-col width-50>
-      	<label class = "item-select">
- 
-	
-   <select>
-      <option>SAMBA</option>
-      <option selected>TDI</option>
-      <option>EXCLUDE</option>
-      <option>WIFI</option>
-      <option>IMPRIMANTE</option>
-      <option>OTHER</option>
-   </select>
+      <ion-col width-50 style="background:#ffffff; margin-left: 20px;">
+        <label class="item-select">
 
-   <ion-row>
-      <ion-col width-20>
-        <div class="publication">
-      <label>Historique d'activites</label>
- </div>
+          <select>
+            <option>SAMBA</option>
+            <option selected>TDI</option>
+            <option>EXCLUDE</option>
+            <option>WIFI</option>
+            <option>IMPRIMANTE</option>
+            <option>OTHER</option>
+          </select>
+
+          <ion-row>
+            <ion-col width-20>
+              <div class="publication">
+                <label>Historique d'activites</label>
+              </div>
+
+            </ion-col>
+
+          </ion-row>
+          <ion-row>
+            <div class="list">
+              <ion-item>
+                <ion-label><ion-icon name="notifications">En service</ion-icon></ion-label>
+                <ion-datetime style="width: 50%; text-align: right; " displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
+
+                </ion-datetime>
+
+
+              </ion-item>
+              <ion-item>
+                <ion-label><ion-icon name="notifications">En service</ion-icon></ion-label>
+                <ion-datetime style="width: 50%; text-align: right; " displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
+
+                </ion-datetime>
+
+
+              </ion-item>
+
+              <ion-item>
+                <ion-label><ion-icon name="notifications">Fin de maintenance</ion-icon></ion-label>
+                <ion-datetime style="width: 50%; text-align: right; " displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
+
+                </ion-datetime>
+
+
+              </ion-item>
+
+
+              <ion-item>
+                <ion-label><ion-icon name="notifications">Fin de maintenance</ion-icon></ion-label>
+                <ion-datetime style="width: 50%; text-align: right; " displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
+
+                </ion-datetime>
+
+
+              </ion-item>
+
+
+              <ion-item>
+                <ion-label><ion-icon name="notifications">Fin de maintenance</ion-icon></ion-label>
+                <ion-datetime style="width: 50%; text-align: right; " displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
+
+                </ion-datetime>
+
+
+              </ion-item>
+
+              <ion-item>
+                <ion-label><ion-icon name="notifications">Fin de maintenance</ion-icon></ion-label>
+                <ion-datetime style="width: 50%; text-align: right; " displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
+
+                </ion-datetime>
+
+
+              </ion-item>
+              <a href="#">Afficher tout l'historique</a>
+
+            </div>
+          </ion-row>
+        </label>
+
 
       </ion-col>
-   
-    </ion-row>
- <ion-row>
-   <div class = "list">
-    <ion-item>
-       <ion-label><ion-icon name="notifications">En service</ion-icon ></ion-label>
-      <ion-datetime style="width: 50%; text-align: right; "displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
 
-  </ion-datetime>
-  
+      <ion-col width-60 style="background:#ffffff; margin-right:20px;">
 
-</ion-item>
-    <ion-item>
-       <ion-label><ion-icon name="notifications">En service</ion-icon ></ion-label>
-      <ion-datetime style="width: 50%; text-align: right; "displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
+        <ion-searchbar (ionInput)="getTopics($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)"></ion-searchbar>
+        <div class="publication">
+          <label>Publication rapide</label>
+        </div>
+        <ion-row wrap>
+          <ion-col width-60>
+            <ion-item>
 
-  </ion-datetime>
-  
-
-</ion-item>
-
-    <ion-item>
-       <ion-label><ion-icon name="notifications" >Fin de maintenance</ion-icon></ion-label>
-      <ion-datetime style="width: 50%; text-align: right; "displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
-
-  </ion-datetime>
-  
-
-</ion-item>
-
-
-   <ion-item>
-       <ion-label><ion-icon name="notifications" >Fin de maintenance</ion-icon></ion-label>
-      <ion-datetime style="width: 50%; text-align: right; "displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
-
-  </ion-datetime>
-  
-
-</ion-item>
-
-
-   <ion-item>
-       <ion-label><ion-icon name="notifications" >Fin de maintenance</ion-icon></ion-label>
-      <ion-datetime style="width: 50%; text-align: right; "displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
-
-  </ion-datetime>
-  
-
-</ion-item>
-
-   <ion-item>
-       <ion-label ><ion-icon name="notifications" >Fin de maintenance</ion-icon></ion-label>
-      <ion-datetime style="width: 50%; text-align: right; "displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" float-end>
-
-  </ion-datetime>
-  
-
-</ion-item>
-<a href="#">Afficher tout l'historique</a>
-
-</div>
-   </ion-row>
-</label>
-
- 
-</ion-col>
-
- <ion-col width-60>
+              <ion-input type="text" [(ngModel)]="chat_input" placeholder="Enter message"></ion-input>
 
 
 
-<ion-searchbar (ionInput)="getTopics($event)" [showCancelButton]="shouldShowCancel" (ionCancel)="onCancel($event)"></ion-searchbar>
- <div class="publication">
-<label>Publication rapide</label>
- </div>
-  <ion-row wrap>
- <ion-col width-60>
-  <ion-item>
- 
-    <ion-input type="text" [(ngModel)]="chat_input" placeholder="Enter message"></ion-input>
- 
+              <ion-list>
+                <ion-item *ngFor="let message of chats">{{message}}</ion-item>
+              </ion-list>
 
 
-  <ion-list>
-    <ion-item *ngFor="let message of chats">{{message}}</ion-item>
-  </ion-list>
+            </ion-item>
 
 
-  </ion-item>
+            <div class="button-bar">
+              <ion-row wrap>
+                <ion-col width-20>
+
+                  <a class="button button-positive" ion-button color="danger" ion-button round><ion-icon class="cloud" name="rainy"></ion-icon>A l'arret</a>
+
+                  <a class="button button-positive" ion-button color="light" ion-button round><ion-icon class="cloud" name="partly-sunny"></ion-icon>Degrade</a>
+
+                  <a class="button button-positive" ion-button color="light" ion-button round><ion-icon class="cloud" name="sunny"></ion-icon>En Service</a>
 
 
-<div class = "button-bar">
- <ion-row wrap>
-  <ion-col width-20>
-  	   
-        <a class = "button button-positive" ion-button color="danger" ion-button round><ion-icon class="cloud" name="rainy"></ion-icon>A l'arret</a>
+                </ion-col>
+              </ion-row>
 
-        <a class = "button button-positive" ion-button color="light" ion-button round><ion-icon class="cloud" name="partly-sunny"></ion-icon>Degrade</a>
-   
-        <a class = "button button-positive" ion-button color="light" ion-button round><ion-icon  class="cloud" name="sunny"></ion-icon>En Service</a> 
+            </div>
+
+          </ion-col>
+
+          <ion-col style="margin-top:45px;" width-40>
 
 
-         </ion-col>
+            <div class="iconclass">
+              <div class="notifier" style="padding-bottom: 10px;">
+                <ion-icon name="albums"></ion-icon>
+                <label>notifier par mail</label>
+              </div>
+              <button class="sendabon" style="margin-bottom: 10px;" ion-button square (click)="goToAddAbonItemPage()">Difusser</button>
+
+              <ion-row>
+                <ion-col width-40>
+
+                  <ion-item>
+                    <ion-label>Du</ion-label>
+                    <ion-datetime style="text-align: left; float: left; " displayFormat="MM. DD. YYYY" [(ngModel)]="myDate">
+                    </ion-datetime>
+                    <ion-icon name="calendar"></ion-icon>
+                  </ion-item>
+
+                </ion-col>
+
+                <ion-col width-20>
+                  <ion-item>
+                    <ion-label>au</ion-label>
+                    <ion-datetime style=" text-align: left; " displayFormat="MM. DD. YYYY" [(ngModel)]="myDate"></ion-datetime>
+                    <ion-icon name="calendar"></ion-icon>
+                  </ion-item>
+
+                </ion-col>
+
+              </ion-row>
+
+
+
+            </div>
+
+          </ion-col>
+
+
         </ion-row>
 
-</div> 
-
-</ion-col>
-
- <ion-col style="margin-top:45px;" width-40>
-
-
-  <div class = "iconclass" >
-    <div class="notifier" style="padding-bottom: 10px;">
-        <ion-icon name="albums"></ion-icon>
-        <label>notifier par mail</label>
-    </div>
-        <button class="sendabon" style="margin-bottom: 10px;" ion-button square (click)="goToAddAbonItemPage()">Difusser</button>
-  
-<ion-row>
- <ion-col width-40>
-
-  <ion-item>
-  <ion-label>Du</ion-label>
-  <ion-datetime style="text-align: left; float: left; "displayFormat="MM. DD. YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-<ion-icon name="calendar"></ion-icon>
-  </ion-item>
-  
- </ion-col>
- 
- <ion-col width-20>
-<ion-item>
-	<ion-label>au</ion-label>
-  <ion-datetime style=" text-align: left; "displayFormat="MM. DD. YYYY" [(ngModel)]="myDate" ></ion-datetime>
-  <ion-icon name="calendar"></ion-icon>
-</ion-item>
-
- </ion-col>
-
-  </ion-row>
-
-
-
-  </div>
-
-</ion-col>
-
-
-</ion-row>
 
 
 
 
-
- </ion-col>
-   </ion-row>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 
-     <ion-list>
-    
-    <ion-item  *ngFor="let topic of topics">
+  <ion-list>
+
+    <ion-item *ngFor="let topic of topics">
       {{ topic }}
     </ion-item>
-   
+
   </ion-list>
 
 

@@ -6,478 +6,322 @@
 -->
 <ion-header>
 
-  <ion-navbar color ="headercolor">
+  <ion-navbar color="headercolor">
     <ion-title>Mon bulletin météo: {{dayOfWeek}} {{currentDateHeader}} {{currentMonth}} {{currentYear}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="background-image:url('assets/1.jpg')">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-4 style="background:#ffffff; margin-right: 20px;" ion-fixed class="coldoi">
+        <br>
+        <div class="calendar-header">
+          <ion-row class="calendar-month">
+            <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
+            <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
+            <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
+          </ion-row>
+        </div>
+        <div class="calendar-body">
+          <ion-grid>
+            <ion-row class="calendar-weekday">
+              <ion-col>D</ion-col>
+              <ion-col>L</ion-col>
+              <ion-col>M</ion-col>
+              <ion-col>M</ion-col>
+              <ion-col>J</ion-col>
+              <ion-col>V</ion-col>
+              <ion-col>S</ion-col>
+            </ion-row>
+            <ion-row class="calendar-date">
+              <ion-col col-1 style="background:#F5F5F5" *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</ion-col>
+              <ion-col col-1 *ngFor="let day of daysInThisMonthGreen" (click)="selectDate(day)">
+                <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+                <ng-template #otherDate class="otherDate">
+                  <span class="otherDate">{{day}}</span>
+                </ng-template>
+              </ion-col>
+              <ion-col col-1 *ngFor="let day of daysInThisMonthRed" (click)="selectDate(day)">
+                <span class="currentDate" *ngIf="currentDate === day; else otherDate2">{{day}}</span>
+                <ng-template #otherDate2 class="otherDate2">
+                  <span class="otherDate2">{{day}}</span>
+                </ng-template>
+              </ion-col>
+              <ion-col col-1 *ngFor="let day of daysInThisMonthYellow" (click)="selectDate(day)">
+                <span class="currentDate" *ngIf="currentDate === day; else otherDate3">{{day}}</span>
+                <ng-template #otherDate3 class="otherDate3">
+                  <span class="otherDate3">{{day}}</span>
+                </ng-template>
+              </ion-col>
+              <ion-col col-1 style="background:#F5F5F5" *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+        <div row style="background:#F5F5F5; margin: 10px; padding: 5px;">
+          <ion-col col-1 style="color:#FF0000"> A l'arrêt</ion-col>
+          <ion-col col-1 style="color:#FFFF00"> En cours de maintenance</ion-col>
+          <ion-col col-1 style="color:#00FF00"> En service</ion-col>
+        </div>
+      </ion-col>
 
-
-<ion-grid>
-
-  <ion-row>
-
-    <ion-col ion-fixed>
-<div style="margin-right: 120px;">
-
-<ion-col >
-
-  <ion-row>
-
-    <ion-col width-40 >
-    		
-      <div class="calendar-header">
-
-        <ion-row class="calendar-month">
-
-          <ion-col col-2 (click)="goToLastMonth()"><ion-icon name="arrow-back"></ion-icon></ion-col>
-
-          <ion-col col-8>{{currentMonth}} {{currentYear}}</ion-col>
-
-          <ion-col col-2 (click)="goToNextMonth()"><ion-icon name="arrow-forward"></ion-icon></ion-col>
-
+      <ion-col style="margin-top:20px;margin-left:20px;margin-right:20px;background:#F5F5F5" ion-fixed class="coldoi">
+        <br>
+        <div style="font-size: 12px; font-weight: bold; text-align: center;  ">MES SERVICES FAVORIS</div>
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-col>
+                <div class="parag">
+                  1<ion-icon style="color: red" name='rainy'></ion-icon>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="paragt">
+                  1<ion-icon style="color: yellow" name='rainy'></ion-icon>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="paragth">
+                  1<ion-icon style="color: green" name='rainy'></ion-icon>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <p style="font-size: 10px;padding-left: 10px;">Preferences</p>
+              </ion-col>
+              <ion-col>
+              </ion-col>
+              <ion-col>
+              </ion-col>
+              <ion-col>
+                <p style="font-size: 10px;padding-left: 5px;">derniere mise en jour</p>
+              </ion-col>
+              <ion-col>
+                <p style="font-size: 10px;padding-left: 5px;">statut</p>
+              </ion-col>
+            </ion-row>
+            <ion-row style="background:#ffffff">
+              <ion-col>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+                </ion-row>
+              </ion-col>
+              <ion-col>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+                </ion-row>
+              </ion-col>
+              <ion-col>
+                <ion-row>
+                  <p style="font-size: 10px;padding: 2px;">EXTELLA</p>
+                </ion-row>
+                <ion-row>
+                  <p style="font-size: 10px;padding: 2px;">SAMBA</p>
+                </ion-row>
+                <ion-row>
+                  <p style="font-size: 10px;padding: 2px;">TDA</p>
+                </ion-row>
+                <ion-row>
+                  <p style="font-size: 10px;padding: 2px;">WIFI</p>
+                </ion-row>
+                <ion-row>
+                  <p style="font-size: 10px;padding: 2px;">IMPRIMANTE</p>
+                </ion-row>
+              </ion-col>
+              <ion-col>
+                <ion-datetime style="text-align: left; float: left; padding:10px; " displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+                </ion-datetime>
+                <ion-datetime style="text-align: left; float: left;padding:10px; " displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+                </ion-datetime>
+                <ion-datetime style="text-align: left; float: left;padding:10px; " displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+                </ion-datetime>
+                <ion-datetime style="text-align: left; float: left; padding:10px;" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+                </ion-datetime>
+                <ion-datetime style="text-align: left; float: left; padding:10px;" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+                </ion-datetime>
+              </ion-col>
+              <ion-col>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px; color:red;" ios="ios-rainy" md="md-rainy"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px;padding: 5px; color: green;" ios="ios-sunny" md="md-sunny"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;color:yellow;" ios="ios-partly-sunny" md="md-partly-sunny"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;color:red;" ios="ios-rainy" md="md-rainy"></ion-icon>
+                </ion-row>
+                <ion-row>
+                  <ion-icon style="font-size: 25px; padding: 5px;color: green;" ios="ios-sunny" md="md-sunny"></ion-icon>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-col>
         </ion-row>
-
-      </div>
-
-      <div class="calendar-body">
-
-        <ion-grid>
-
-          <ion-row class="calendar-weekday">
-
-            <ion-col>D</ion-col>
-
-            <ion-col>L</ion-col>
-
-            <ion-col>M</ion-col>
-
-            <ion-col>M</ion-col>
-
-            <ion-col>J</ion-col>
-
-            <ion-col>V</ion-col>
-
-            <ion-col>S</ion-col>
-
-          </ion-row>
-
-          <ion-row class="calendar-date">
-
-            <ion-col col-1 style="background:#F5F5F5" *ngFor="let lastDay of daysInLastMonth" class="last-month" (click)="goToLastMonth()">{{lastDay}}</ion-col>
-
-
-
-            <ion-col col-1 *ngFor="let day of daysInThisMonthGreen" (click)="selectDate(day)">
-
-              <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
-
-              <ng-template #otherDate class="otherDate">
-
-                <span class="otherDate">{{day}}</span>                
-
-              </ng-template>
-
-            </ion-col>
-
-            <ion-col col-1 *ngFor="let day of daysInThisMonthRed" (click)="selectDate(day)">
-
-              <span class="currentDate" *ngIf="currentDate === day; else otherDate2">{{day}}</span>
-
-              <ng-template #otherDate2 class="otherDate2">
-
-                <span class="otherDate2">{{day}}</span>                
-
-              </ng-template>
-
-            </ion-col>
-            <ion-col col-1 *ngFor="let day of daysInThisMonthYellow" (click)="selectDate(day)">
-
-              <span class="currentDate" *ngIf="currentDate === day; else otherDate3">{{day}}</span>
-
-              <ng-template #otherDate3 class="otherDate3">
-
-                <span class="otherDate3">{{day}}</span>
-               
-              </ng-template>
-
-            </ion-col>
-
-
-            <ion-col col-1 style="background:#F5F5F5" *ngFor="let nextDay of daysInNextMonth" class="next-month" (click)="goToNextMonth()">{{nextDay}}</ion-col>
-
-          </ion-row>
-
-        </ion-grid>
-
-      </div>
-
-      <div class="selected-event" *ngIf="isSelected">
-
-        <ion-list>
-
-          <ion-item *ngFor="let se of selectedEvent">
-
-            <ion-buttons end>
-
-              <button ion-button clear icon-only (click)="deleteEvent(se)">
-
-                <ion-icon name="close"></ion-icon>
-
-              </button>
-
-            </ion-buttons>
-
-            <h2>{{se.title}}</h2>
-
-            <h3>{{se.message}}</h3>
-
-            <p>Start Date: {{se.startDate}}<br>
-
-            Start Date: {{se.endDate}}</p>
-
-          </ion-item>
-
-        </ion-list>
-
-      </div>
-
-      <div row style="background:#F5F5F5; margin: 10px; padding: 5px;">
-
-        <ion-col col-1 style="color:#FF0000"> A l'arrêt</ion-col>
-
-        <ion-col col-1 style="color:#FFFF00"> En cours de maintenance</ion-col>
-
-        <ion-col col-1 style="color:#00FF00"> En service</ion-col>
-
-      </div>
-  
-    </ion-col>
-
-  </ion-row>
-
-  </ion-col>
-</div>
-</ion-col>
-
-<div class="coldoi">
-  <ion-col ion-fixed>
-<div style="font-size: 12px; font-weight: bold; text-align: center; padding-top: 35px; ">MES SERVICES FAVORIS</div>
-<ion-row >
-
-
-     <ion-col>         
-  <ion-row>
-    <ion-col>
-       <div class="parag">
-       1<ion-icon style="color: red" name='rainy'></ion-icon>
-        </div>
-    </ion-col>
-    <ion-col >
-         <div class="paragt">
-       1<ion-icon style="color: yellow" name='rainy'></ion-icon>
-        </div>
-   
-    </ion-col>
-    <ion-col >
-     <div class="paragth">
-       1<ion-icon style="color: green" name='rainy'></ion-icon>
-        </div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col>
-          <p style="font-size: 10px;padding-left: 10px;">Preferences</p>
-    </ion-col>
-    <ion-col >
-    
-   
-    </ion-col>
-    <ion-col >
-      
-    </ion-col>
-     <ion-col >
-        <p style="font-size: 10px;padding-left: 5px;">derniere mise en jour</p>
-    </ion-col>
-       <ion-col >
-     <p style="font-size: 10px;padding-left: 5px;">statut</p>
-    </ion-col>
-  </ion-row>
-
-
-<ion-row>
-    <ion-col>
-
-    	<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"   ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"  ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-    </ion-col>
-
-    <ion-col >
-        	<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"    ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"  ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"  ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"  ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"   ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-    </ion-col>
-
-    <ion-col>
-    <ion-row>
-  <p style="font-size: 10px;padding: 2px;">EXTELLA</p>
-</ion-row>
-<ion-row>
-   <p style="font-size: 10px;padding: 2px;">SAMBA</p>
-</ion-row>
-<ion-row>
-   <p style="font-size: 10px;padding: 2px;">TDA</p>
-</ion-row>
-<ion-row>
-  <p style="font-size: 10px;padding: 2px;">WIFI</p>
-</ion-row>
-<ion-row>
-    <p style="font-size: 10px;padding: 2px;">IMPRIMANTE</p>
-</ion-row>
-    </ion-col>
-   
-    <ion-col >
-
-  <ion-datetime style="text-align: left; float: left; padding:10px; "displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-  
-  <ion-datetime style="text-align: left; float: left;padding:10px; "displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-    
-  <ion-datetime style="text-align: left; float: left;padding:10px; "displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-   
-  <ion-datetime style="text-align: left; float: left; padding:10px;"displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-    
-  <ion-datetime style="text-align: left; float: left; padding:10px;"displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-    </ion-col>
-
-
-    <ion-col >
-    
-    	<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px; color:red;"   ios="ios-rainy" md="md-rainy"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px;padding: 5px; color: green;" ios="ios-sunny" md="md-sunny"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;color:yellow;" ios="ios-partly-sunny" md="md-partly-sunny"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;color:red;" ios="ios-rainy" md="md-rainy"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;color: green;"  ios="ios-sunny" md="md-sunny"></ion-icon>
-</ion-row>
-
-    </ion-col>
-</ion-row>
-</ion-col>
-</ion-row>
-
-</ion-col>
-</div>
-
-
-
-<div class="coldoi">
- <ion-col style="margin-left: 20px;" ion-fixed>
-  <label class = "itemselect" style="font-size:12px;">
-   <select>
-      <option>TDI</option>
-      <option selected>DIRECTION FINANCE</option>
-      <option>EXCLUDE</option>
-      <option>WIFI</option>
-      <option>IMPRIMANTE</option>
-      <option>OTHER</option>
-   </select>
-</label>
-<ion-col >
-	
-  <ion-row>
-    <ion-col>
-       <div class="parag">
-       1<ion-icon style="color: red" name='rainy'></ion-icon>
-        </div>
-    </ion-col>
-    <ion-col >
-         <div class="paragt">
-       1<ion-icon style="color: yellow" name='rainy'></ion-icon>
-        </div>
-   
-    </ion-col>
-    <ion-col >
-     <div class="paragth">
-       1<ion-icon style="color: green" name='rainy'></ion-icon>
-        </div>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-          <p style="font-size: 10px;padding-left: 5px;">Preferences</p>
-    </ion-col>
-    <ion-col >
-    
-   
-    </ion-col>
-    <ion-col >
-        
-    </ion-col>
-       <ion-col >
-      <p style="font-size: 10px;padding-left: 2px;">derniere mise en jour</p>
-    </ion-col>
-     <ion-col >
-     <p style="font-size: 10px;padding-left: 5px;">statut</p>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-
-      <ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"   ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"  ios="ios-heart" md="md-heart"></ion-icon>
-</ion-row>
-    </ion-col>
-
-    <ion-col >
+      </ion-col>
+
+      <ion-col style="background:#F5F5F5; margin-left: 20px;" ion-fixed class="coldoi">
+        <br>
+        <label class="itemselect" style="font-size:12px;">
+          <select>
+            <option>TDI</option>
+            <option selected>DIRECTION FINANCE</option>
+            <option>EXCLUDE</option>
+            <option>WIFI</option>
+            <option>IMPRIMANTE</option>
+            <option>OTHER</option>
+          </select>
+        </label>
+        <ion-col>
           <ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"    ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"  ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"  ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"  ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;"   ios="ios-mail" md="md-mail"></ion-icon>
-</ion-row>
-    </ion-col>
-
-    <ion-col>
-    <ion-row>
-  <p style="font-size: 10px;padding: 2px;">EXTELLA</p>
-</ion-row>
-<ion-row>
-   <p style="font-size: 10px;padding: 2px;">SAMBA</p>
-</ion-row>
-<ion-row>
-   <p style="font-size: 10px;padding: 2px;">TDA</p>
-</ion-row>
-<ion-row>
-  <p style="font-size: 10px;padding: 2px;">WIFI</p>
-</ion-row>
-<ion-row>
-    <p style="font-size: 10px;padding: 2px;">IMPRIMANTE</p>
-</ion-row>
-    </ion-col>
-   
-    <ion-col >
-
-  <ion-datetime style="text-align: left; float: left; padding:10px; "displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-  
-  <ion-datetime style="text-align: left; float: left;padding:10px; "displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-    
-  <ion-datetime style="text-align: left; float: left;padding:10px; "displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-   
-  <ion-datetime style="text-align: left; float: left; padding:10px;"displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-    
-  <ion-datetime style="text-align: left; float: left; padding:10px;"displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
-  </ion-datetime>
-
-    </ion-col>
-
-
-    <ion-col >
-    
-      <ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px; color:red;"   ios="ios-rainy" md="md-rainy"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px;padding: 5px; color: green;" ios="ios-sunny" md="md-sunny"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;color:yellow;" ios="ios-partly-sunny" md="md-partly-sunny"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;color:red;" ios="ios-rainy" md="md-rainy"></ion-icon>
-</ion-row>
-<ion-row>
-   <ion-icon style="font-size: 25px; padding: 5px;color: green;"  ios="ios-sunny" md="md-sunny"></ion-icon>
-</ion-row>
-
-    </ion-col>
-</ion-row>
-     </ion-col>
- <ion-col>
-
-      <a href="http://localhost:8100/#/items-list">+ajouter un service</a>
-    
- </ion-col>
-</ion-col>
-</div>
-
-
-  </ion-row>
-</ion-grid>
-
+            <ion-col>
+              <div class="parag">
+                1<ion-icon style="color: red" name='rainy'></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="paragt">
+                1<ion-icon style="color: yellow" name='rainy'></ion-icon>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div class="paragth">
+                1<ion-icon style="color: green" name='rainy'></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <p style="font-size: 10px;padding-left: 5px;">Preferences</p>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+            <ion-col>
+              <p style="font-size: 10px;padding-left: 2px;">derniere mise en jour</p>
+            </ion-col>
+            <ion-col>
+              <p style="font-size: 10px;padding-left: 5px;">statut</p>
+            </ion-col>
+          </ion-row>
+          <ion-row style="background: #ffffff">
+            <ion-col>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-heart" md="md-heart"></ion-icon>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;" ios="ios-mail" md="md-mail"></ion-icon>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row>
+                <p style="font-size: 10px;padding: 2px;">EXTELLA</p>
+              </ion-row>
+              <ion-row>
+                <p style="font-size: 10px;padding: 2px;">SAMBA</p>
+              </ion-row>
+              <ion-row>
+                <p style="font-size: 10px;padding: 2px;">TDA</p>
+              </ion-row>
+              <ion-row>
+                <p style="font-size: 10px;padding: 2px;">WIFI</p>
+              </ion-row>
+              <ion-row>
+                <p style="font-size: 10px;padding: 2px;">IMPRIMANTE</p>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-datetime style="text-align: left; float: left; padding:10px; " displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+              </ion-datetime>
+              <ion-datetime style="text-align: left; float: left;padding:10px; " displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+              </ion-datetime>
+              <ion-datetime style="text-align: left; float: left;padding:10px; " displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+              </ion-datetime>
+              <ion-datetime style="text-align: left; float: left; padding:10px;" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+              </ion-datetime>
+              <ion-datetime style="text-align: left; float: left; padding:10px;" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate">
+              </ion-datetime>
+            </ion-col>
+            <ion-col>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px; color:red;" ios="ios-rainy" md="md-rainy"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px;padding: 5px; color: green;" ios="ios-sunny" md="md-sunny"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;color:yellow;" ios="ios-partly-sunny" md="md-partly-sunny"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;color:red;" ios="ios-rainy" md="md-rainy"></ion-icon>
+              </ion-row>
+              <ion-row>
+                <ion-icon style="font-size: 25px; padding: 5px;color: green;" ios="ios-sunny" md="md-sunny"></ion-icon>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col>
+          <a href="http://localhost:8100/#/items-list">+ajouter un service</a>
+        </ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
